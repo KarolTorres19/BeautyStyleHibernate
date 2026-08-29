@@ -1,0 +1,578 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #070707;
+    color: #ffffff;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.muted {
+    color: #b6b6b6;
+}
+
+
+/* =========================
+   LOGIN
+   ========================= */
+
+.auth-view {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background-color: #070707;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 520px;
+    background-color: #0d0d0d;
+    border: 1px solid #292929;
+    border-radius: 26px;
+    padding: 34px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+.auth-logo {
+    width: 260px;
+    max-width: 85%;
+    display: block;
+    margin: 0 auto 18px;
+    border-radius: 10px;
+}
+
+.auth-card h1 {
+    text-align: center;
+    margin: 8px 0;
+    font-size: 38px;
+}
+
+.auth-card p {
+    text-align: center;
+    color: #b6b6b6;
+}
+
+/* =========================
+   FORMULARIOS
+   ========================= */
+
+form {
+    display: grid;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    background-color: #ffffff;
+    color: #151515;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 14px 16px;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #c21870;
+    box-shadow: 0 0 0 4px rgba(194, 24, 112, 0.18);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.password-field {
+    position: relative;
+}
+
+
+/* =========================
+   BOTONES
+   ========================= */
+
+.btn {
+    border: 0;
+    border-radius: 12px;
+    padding: 14px 20px;
+    font-weight: 800;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background-color: #c21870;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #e11d79;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid #c21870;
+    color: #ffffff;
+}
+
+.btn-danger {
+    background-color: #e53935;
+    color: #ffffff;
+}
+
+.btn-block {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.link-btn {
+    background: none;
+    border: 0;
+    color: #f4a0c9;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   APLICACIÓN
+   ========================= */
+
+.app-shell {
+    min-height: 100vh;
+    padding-bottom: 92px;
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 24px;
+    background-color: rgba(7, 7, 7, 0.96);
+    border-bottom: 1px solid #252525;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+.brand strong {
+    display: block;
+    font-size: 19px;
+}
+
+.brand span {
+    display: block;
+    color: #aaaaaa;
+    font-size: 12px;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 30px 22px;
+}
+
+
+/* =========================
+   ENCABEZADOS
+   ========================= */
+
+.page-heading {
+    text-align: center;
+    margin: 10px auto 28px;
+    max-width: 760px;
+}
+
+.page-heading h1 {
+    font-size: 45px;
+    margin: 0 0 8px;
+}
+
+.page-heading p {
+    color: #aaaaaa;
+    font-size: 18px;
+    margin: 0;
+}
+
+
+/* =========================
+   INICIO
+   ========================= */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background-color: #151515;
+    border: 1px solid #2a2a2a;
+    border-radius: 24px;
+    padding: 34px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 0 0 10px;
+}
+
+.hero p {
+    color: #dddddd;
+    font-size: 20px;
+}
+
+.hero-symbol {
+    width: 100px;
+    height: 100px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 2px solid #c21870;
+    color: #e11d79;
+    font-size: 44px;
+}
+
+
+/* =========================
+   TARJETAS
+   ========================= */
+
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 26px 0;
+}
+
+.quick-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    background-color: #ffffff;
+    color: #171717;
+    border: 0;
+    border-radius: 18px;
+    padding: 20px;
+    min-height: 105px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.quick-card:hover {
+    outline: 3px solid rgba(225, 29, 121, 0.4);
+}
+
+.quick-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+    background-color: #c21870;
+    font-size: 28px;
+}
+
+.quick-card b {
+    display: block;
+    font-size: 18px;
+}
+
+.quick-card small {
+    display: block;
+    color: #777777;
+    margin-top: 4px;
+}
+
+
+/* =========================
+   FORMULARIO DE CITAS
+   ========================= */
+
+.form-card {
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    color: #171717;
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+.form-card label {
+    color: #222222;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea {
+    border: 1px solid #bbbbbb;
+}
+
+.two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.two-cols > div {
+    display: grid;
+    gap: 8px;
+}
+
+
+/* =========================
+   CITAS
+   ========================= */
+
+.appointments-list {
+    display: grid;
+    gap: 16px;
+}
+
+.appointment-card {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    background-color: #ffffff;
+    color: #171717;
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+.appointment-card h3 {
+    margin: 0 0 5px;
+}
+
+.appointment-card p {
+    margin: 5px 0;
+    color: #666666;
+}
+
+.appointment-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn-small {
+    padding: 10px 14px;
+    font-size: 14px;
+}
+
+
+/* =========================
+   BARRA INFERIOR
+   ========================= */
+
+.bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    height: 84px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: #080808;
+    border-top: 1px solid #333333;
+}
+
+.nav-item {
+    border: 0;
+    background: none;
+    color: #aaaaaa;
+    display: grid;
+    place-items: center;
+    gap: 2px;
+    padding: 8px;
+}
+
+.nav-item span {
+    font-size: 29px;
+    line-height: 1;
+}
+
+.nav-item small {
+    font-size: 12px;
+}
+
+.nav-item.active,
+.nav-item:hover {
+    color: #ff4a9a;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 780px) {
+
+    .auth-card {
+        padding: 24px 18px;
+    }
+
+    .topbar {
+        padding: 10px 14px;
+    }
+
+    .main-content {
+        padding: 20px 14px;
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .two-cols {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-card {
+        grid-template-columns: 90px 1fr;
+    }
+
+    .appointment-actions {
+        grid-column: 1 / -1;
+        flex-direction: row;
+    }
+
+    .hero {
+        padding: 24px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-symbol {
+        width: 72px;
+        height: 72px;
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .brand img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .brand strong {
+        font-size: 16px;
+    }
+
+    .brand span {
+        display: none;
+    }
+
+    .quick-card {
+        padding: 15px;
+    }
+
+    .bottom-nav {
+        height: 76px;
+    }
+
+    .nav-item span {
+        font-size: 24px;
+    }
+}
+/* =========================
+   PORTADA
+   ========================= */
+
+.landing-view {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background-color: #070707;
+}
+
+.landing-card {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    padding: 45px 30px;
+}
+
+.landing-logo {
+    width: 280px;
+    max-width: 85%;
+    display: block;
+    margin: 0 auto 24px;
+    border-radius: 10px;
+}
+
+.landing-card h1 {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.landing-card p {
+    color: #b6b6b6;
+    font-size: 19px;
+    margin: 0 0 28px;
+}
+
+.landing-card .btn {
+    display: inline-block;
+    text-decoration: none;
+}
