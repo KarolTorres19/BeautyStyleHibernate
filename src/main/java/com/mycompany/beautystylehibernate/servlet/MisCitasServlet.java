@@ -12,38 +12,49 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+/**
+ * Servlet encargado de consultar y mostrar las citas
+ * correspondientes al cliente que inició sesión.
+ */
 @WebServlet("/MisCitasServlet")
 public class MisCitasServlet extends HttpServlet {
 
+    // DAO utilizado para consultar las citas almacenadas.
     private CitaDAO citaDAO = new CitaDAO();
 
+    /**
+     * Procesa las solicitudes realizadas mediante el método GET.
+     * Consulta las citas del cliente y las envía a la página JSP.
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Obtener la sesión actual del cliente.
+        // Obtiene la sesión actual del cliente.
         HttpSession session = request.getSession();
 
-        // Recuperar el cliente que inició sesión.
+        // Recupera el cliente que inició sesión.
         Cliente cliente = (Cliente) session.getAttribute("cliente");
 
+        // Comprueba que exista un cliente en la sesión.
         if (cliente != null) {
 
-            // Consultar solamente las citas del cliente.
+            // Consulta solamente las citas pertenecientes al cliente.
             List<Cita> citas = citaDAO.listarPorCliente(
                     cliente.getId_cliente()
             );
 
-            // Enviar las citas a la página JSP.
+            // Envía la lista de citas a la página JSP.
             request.setAttribute("citas", citas);
 
-            // Mostrar la página de Mis citas.
+            // Redirige la solicitud a la página donde se muestran
+            // las citas del cliente.
             request.getRequestDispatcher("mis-citas.jsp")
                     .forward(request, response);
 
         } else {
 
-            // Si no existe una sesión, volver al inicio de sesión.
+            // Si no existe una sesión activa, se redirige al login.
             response.sendRedirect("login.jsp");
         }
     }
