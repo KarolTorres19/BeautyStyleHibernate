@@ -24,7 +24,19 @@
             <p class="muted">
                 Ingresa a tu cuenta para gestionar tus citas.
             </p>
+<%
+String error = request.getParameter("error");
 
+if (error != null) {
+%>
+
+<p style="color:red; text-align:center;">
+    Usuario o contraseña incorrectos.
+</p>
+
+<%
+}
+%>
             <form action="LoginServlet" method="post">
 
                 <label for="usuario">Usuario</label>

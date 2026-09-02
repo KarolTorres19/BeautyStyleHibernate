@@ -575,4 +575,15 @@ textarea {
 .landing-card .btn {
     display: inline-block;
     text-decoration: none;
+    
+.login-error {
+    background: #ffe4ec;
+    color: #d63384;
+    border: 1px solid #d63384;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 15px 0;
+    font-weight: bold;
+}  
 }
